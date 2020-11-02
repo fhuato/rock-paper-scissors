@@ -67,14 +67,15 @@ let compCount = 0;
             }
 
         if (playerCount > compCount) {
-            return(`You won the game! Your Score: ${playerCount} - Computer Score: ${compCount}`);
+            return(alert(`You won the game! Your Score: ${playerCount} - Computer Score: ${compCount}`));
         } else if (playerCount < compCount) {
-            return(`You lost the game! Your Score: ${playerCount} - Computer Score: ${compCount}`);
+            return(alert(`You lost the game! Your Score: ${playerCount} - Computer Score: ${compCount}`));
         } else if (playerCount == compCount) {
-            return("It's a tie!")
+            return(alert("It's a tie!"));
         }
     }
 
+    console.log(game());
        
   </script>
 </body>
