@@ -61,6 +61,7 @@ let compCount = 0;
         let rounds
         for (rounds = 0; rounds < 5; rounds++) {
             let playerSelection = prompt("Rock, Paper, or Scissors?:");
+            playerSelection = playerSelection.toLowerCase();
             console.log(alert(`You picked ${playerSelection}!`));
             console.log(alert(playRound(playerSelection)));
             console.log(alert(`Player Score: ${playerCount} - Computer Score: ${compCount}`));
