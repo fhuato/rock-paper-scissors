@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div class='body'>
+    <body>
+        <h1 class='h1'>Rock Paper Scissors</h1>
+            <div id='container'>
+                <p class='p'>Select your weapon:</p>
+                <button type="button" id='rock'>Rock</button> 
+                <button type="button" id='paper'>Paper</button> 
+                <button type="button" id='scissors'>Scissors</button> 
+            </div>
+
+    <script>
+
+    let playerCount = 0;
+    let compCount = 0;
+
+    // Function for computer to select Rock, Paper, or Scissors at random.
+
+        function computerPlay() {
+            let compSelection = ["Rock", "Paper", "Scissors"];
+            return compSelection[Math.floor(Math.random() * compSelection.length)]; 
+        }
+
+    // Function will allow user to input Rock, Paper or Scissors and will compare against computer.
+
+        function playRound(playerSelection, computerSelection) {
+
+            computerSelection = computerPlay();
+            //playerSelection = playerSelection.toLowerCase();
+
+            if (playerSelection == "rock" && computerSelection == "Rock") {
+                return("Tie!");
+            } else if (playerSelection == "rock" && computerSelection == "Paper") {
+                compCount++;
+                return("You lose! Paper beats Rock!");
+            } else if (playerSelection == "rock" && computerSelection == "Scissors") {
+                playerCount++;
+                return("You win! Rock beats Scissors!");
+            } 
+            if (playerSelection == "paper" && computerSelection == "Rock") {
+                playerCount++;
+                return("You win! Paper beats Rock!");
+            } else if (playerSelection == "paper" && computerSelection == "Paper") {
+                return("Tie!");
+            } else if (playerSelection == "paper" && computerSelection == "Scissors") {
+                compCount++;
+                return("You lose! Scissors beats Paper!");
+            }   
+            if (playerSelection == "scissors" && computerSelection == "Rock") {
+                compCount++;
+                return("You lose! Rock beats Scissors!");
+            } else if (playerSelection == "scissors" && computerSelection == "Paper") {
+                playerCount++;
+                return("You win! Scissors beats Paper!");
+            } else if (playerSelection == "scissors" && computerSelection == "Scissors") {
+            return("Tie!");
+            } else {
+                return("Not a valid argument. Please input Rock, Paper, or Scissors");
+        }
+    }
+
+
+    // Rock, Paper, Scissors game with very simple UI 
+
+    const container = document.querySelector('#container');
+    const divresults = document.createElement('div');
+    const divround = document.createElement('div');
+
+    const btnrock = document.querySelector('#rock');
+    btnrock.addEventListener('click', () => {
+        divround.textContent = playRound('rock');
+        divresults.textContent = `Your Score: ${playerCount} - Computer Score: ${compCount}`
+        container.appendChild(divround);
+        container.appendChild(divresults);
+        if (playerCount == 5) alert(`You won the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if (compCount == 5) alert(`You lost the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if ( playerCount == 5 && compCount == 5) alert(`It's a draw! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        
+    });
+
+    const btnpaper = document.querySelector('#paper');
+    btnpaper.addEventListener('click', () => {
+        divround.textContent = playRound('paper');
+        divresults.textContent = `Your Score: ${playerCount} - Computer Score: ${compCount}`
+        container.appendChild(divround);
+        container.appendChild(divresults);
+        if (playerCount == 5) alert(`You won the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if (compCount == 5) alert(`You lost the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if ( playerCount == 5 && compCount == 5) alert(`It's a draw! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);  
+    });
+
+    const btnscissors = document.querySelector('#scissors');
+    btnscissors.addEventListener('click', () => {
+        divround.textContent = playRound('scissors');
+        divresults.textContent = `Your Score: ${playerCount} - Computer Score: ${compCount}`
+        container.appendChild(divround);
+        container.appendChild(divresults);
+        if (playerCount == 5) alert(`You won the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if (compCount == 5) alert(`You lost the game! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        else if ( playerCount == 5 && compCount == 5) alert(`It's a draw! Final Score: ${playerCount} vs ${compCount}`), window.location.reload(true);
+        
+    });
+
+
+    </script>
+    </body>
+</div>
+</html>

@@ -1,0 +1,56 @@
+/* CSS Style Sheet */
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #36313c;
+    color:#E8CAB9;
+}
+
+.h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 60px;
+}
+
+.p {
+    color:#E8CAB9;
+    font-size: 30px;
+}
+#container {
+    text-align: center;
+    color: black;
+    color:#E8CAB9;
+    font-size: 25px;
+}
+
+button {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 9.5rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+}
+    
+    
+
